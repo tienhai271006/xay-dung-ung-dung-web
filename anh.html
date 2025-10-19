@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phim yêu thích của tôi</title>
+    <title>Bộ sưu tập ảnh</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             font-size: 16px;
             margin: 0;
         }
-
-        
 
         header {
             text-align: center;
@@ -51,32 +49,28 @@
             text-align: center;
         }
 
-        section img {
-            width: 200px;
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .gallery img {
+            width: 100%;
             border: 2px solid #ccc;
             border-radius: 10px;
             padding: 5px;
-            margin: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        /* Hover effect for images */
-        section img:hover {
+        .gallery img:hover {
             transform: scale(1.05);
             box-shadow: 0 0 10px #999;
         }
 
-        /* nth-child to vary image style */
-        section img:nth-child(odd) {
+        .gallery img:nth-child(even) {
             border-radius: 30px;
-        }
-
-        /* Use grid for poster layout */
-        .poster-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            justify-items: center;
         }
 
         footer {
@@ -90,7 +84,7 @@
 <body>
     
     <header>
-        <h1>Phim yêu thích của tôi</h1>
+        <h1>Bộ sưu tập ảnh</h1>
         <nav>
             <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home icon">
             <a href="index.html">Trang chủ</a>
@@ -101,25 +95,14 @@
     </header>
 
     <main id="main">
-        <section>
-            <h2>Phim Recommend</h2>
-            <ul>
-                <li>Inception</li>
-                <li>Oppenheimer</li>
-                <li>The Lord of the Rings</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Poster Phim</h2>
-            <div class="poster-grid">
-                <img src="https://image.tmdb.org/t/p/original/8IB2e4r4oVhHnANbnm7O3Tj6tF8.jpg" alt="Inception Poster">
-                <img src="https://i.etsystatic.com/40361189/r/il/40a377/5168340073/il_794xN.5168340073_nqfs.jpg" alt="Oppenheimer Poster">
-                <img src="https://tse4.mm.bing.net/th/id/OIP._Zs2-XTOdPgCVww4rRGd9gHaK6" alt="The Lord of the Rings Poster">
-            </div>
-        </section>
-
-        <p>Để biết thêm thông tin về phim, truy cập <a href="https://www.imdb.com" target="_blank">IMDb</a>.</p>
+        <h2>Poster phim</h2>
+        <div class="gallery">
+            <img src="https://image.tmdb.org/t/p/original/8IB2e4r4oVhHnANbnm7O3Tj6tF8.jpg" alt="Inception">
+            <img src="https://i.etsystatic.com/40361189/r/il/40a377/5168340073/il_794xN.5168340073_nqfs.jpg" alt="Oppenheimer">
+            <img src="https://tse4.mm.bing.net/th/id/OIP._Zs2-XTOdPgCVww4rRGd9gHaK6" alt="Lord of the Rings">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.y9-khK1MKdJ4WsWffqYqAAHaK5?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Titanic">
+            <img src="https://m.media-amazon.com/images/I/812I8sAkROS.jpg" alt="Harry Potter">
+        </div>
     </main>
 
     <footer>

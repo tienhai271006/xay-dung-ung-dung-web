@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phim yêu thích của tôi</title>
+    <title>Diễn viên yêu thích</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,32 +51,33 @@
             text-align: center;
         }
 
-        section img {
-            width: 200px;
-            border: 2px solid #ccc;
-            border-radius: 10px;
-            padding: 5px;
-            margin: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
+        .actor-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        /* Hover effect for images */
-        section img:hover {
-            transform: scale(1.05);
+        .actor {
+            width: 250px;
+            border: 2px solid #ccc;
+            padding: 10px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .actor:hover {
+            transform: translateY(-5px);
             box-shadow: 0 0 10px #999;
         }
 
-        /* nth-child to vary image style */
-        section img:nth-child(odd) {
-            border-radius: 30px;
+        .actor img {
+            width: 100%;
+            border-radius: 10px;
         }
 
-        /* Use grid for poster layout */
-        .poster-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            justify-items: center;
+        .actor:nth-child(odd) img {
+            border-radius: 30px;
         }
 
         footer {
@@ -90,7 +91,7 @@
 <body>
     
     <header>
-        <h1>Phim yêu thích của tôi</h1>
+        <h1>Diễn viên yêu thích</h1>
         <nav>
             <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home icon">
             <a href="index.html">Trang chủ</a>
@@ -101,25 +102,25 @@
     </header>
 
     <main id="main">
-        <section>
-            <h2>Phim Recommend</h2>
-            <ul>
-                <li>Inception</li>
-                <li>Oppenheimer</li>
-                <li>The Lord of the Rings</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Poster Phim</h2>
-            <div class="poster-grid">
-                <img src="https://image.tmdb.org/t/p/original/8IB2e4r4oVhHnANbnm7O3Tj6tF8.jpg" alt="Inception Poster">
-                <img src="https://i.etsystatic.com/40361189/r/il/40a377/5168340073/il_794xN.5168340073_nqfs.jpg" alt="Oppenheimer Poster">
-                <img src="https://tse4.mm.bing.net/th/id/OIP._Zs2-XTOdPgCVww4rRGd9gHaK6" alt="The Lord of the Rings Poster">
+        <h2>Những gương mặt tài năng</h2>
+        <div class="actor-list">
+            <div class="actor">
+                <img src="https://cdn.britannica.com/05/156805-050-4B632781/Leonardo-DiCaprio-2010.jpg" alt="Leonardo DiCaprio">
+                <p><strong>Leonardo DiCaprio</strong><br>Inception, Titanic</p>
             </div>
-        </section>
-
-        <p>Để biết thêm thông tin về phim, truy cập <a href="https://www.imdb.com" target="_blank">IMDb</a>.</p>
+            <div class="actor">
+                <img src="https://cdn.britannica.com/10/215010-050-A44F9280/Irish-actor-Cillian-Murphy-2017.jpg" alt="Cillian Murphy">
+                <p><strong>Cillian Murphy</strong><br>Oppenheimer, Peaky Blinders</p>
+            </div>
+            <div class="actor">
+                <img src="https://th.bing.com/th/id/R.f48fb13e601ffc481b45288dfbc0506e?rik=T3tzsocwpmdWew&riu=http%3a%2f%2fwww.media4.hw-static.com%2fwp-content%2fuploads%2f13873620.jpg&ehk=iqnJVz3d7bEtYpikidUIJu857SjUN03oRcaClKzG1AI%3d&risl=&pid=ImgRaw&r=0" alt="Elijah Wood">
+                <p><strong>Elijah Wood</strong><br>Lord of the Rings</p>
+            </div>
+            <div class="actor">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.5tHncSj2R7dvJIfCFVLc4wHaNK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Emma Watson">
+                <p><strong>Emma Watson</strong><br>Harry Potter, Little Women</p>
+            </div>
+        </div>
     </main>
 
     <footer>
