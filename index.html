@@ -11,8 +11,6 @@
             margin: 0;
         }
 
-        
-
         header {
             text-align: center;
             background-color: #f2f2f2;
@@ -60,18 +58,15 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        /* Hover effect for images */
         section img:hover {
             transform: scale(1.05);
             box-shadow: 0 0 10px #999;
         }
 
-        /* nth-child to vary image style */
         section img:nth-child(odd) {
             border-radius: 30px;
         }
 
-        /* Use grid for poster layout */
         .poster-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -85,6 +80,24 @@
             padding: 10px;
             margin-top: 20px;
         }
+
+        
+        #image {
+            width: 30vw;
+            height: 30vh;
+            margin: 0 auto 20px auto;
+            border: 2px dashed #aaa;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            font-weight: bold;
+            font-size: 20px;
+            text-shadow: 1px 1px 3px white;
+        }
     </style>
 </head>
 <body>
@@ -92,7 +105,7 @@
     <header>
         <h1>Phim yêu thích của tôi</h1>
         <nav>
-            <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home icon">
+            <a href="index.html"><img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home icon"></a>
             <a href="index.html">Trang chủ</a>
             <a href="dienvien.html">Diễn viên</a>
             <a href="anh.html">Bộ sưu tập ảnh</a>
@@ -101,6 +114,9 @@
     </header>
 
     <main id="main">
+
+        <div id="image">Di chuột qua một poster để hiển thị tại đây.</div>
+
         <section>
             <h2>Phim Recommend</h2>
             <ul>
@@ -113,9 +129,9 @@
         <section>
             <h2>Poster Phim</h2>
             <div class="poster-grid">
-                <img src="https://image.tmdb.org/t/p/original/8IB2e4r4oVhHnANbnm7O3Tj6tF8.jpg" alt="Inception Poster">
-                <img src="https://i.etsystatic.com/40361189/r/il/40a377/5168340073/il_794xN.5168340073_nqfs.jpg" alt="Oppenheimer Poster">
-                <img src="https://tse4.mm.bing.net/th/id/OIP._Zs2-XTOdPgCVww4rRGd9gHaK6" alt="The Lord of the Rings Poster">
+                <img src="https://image.tmdb.org/t/p/original/8IB2e4r4oVhHnANbnm7O3Tj6tF8.jpg" alt="Inception Poster" onmouseover="upDate(this)" onmouseout="undo()">
+                <img src="https://i.etsystatic.com/40361189/r/il/40a377/5168340073/il_794xN.5168340073_nqfs.jpg" alt="Oppenheimer Poster" onmouseover="upDate(this)" onmouseout="undo()">
+                <img src="https://tse4.mm.bing.net/th/id/OIP._Zs2-XTOdPgCVww4rRGd9gHaK6" alt="The Lord of the Rings Poster" onmouseover="upDate(this)" onmouseout="undo()">
             </div>
         </section>
 
@@ -125,5 +141,25 @@
     <footer>
         <p>&copy; 2025 Phim yêu thích của tôi</p>
     </footer>
+
+    <script>
+        
+        function upDate(previewPic) {
+            console.log("Event triggered!");
+            console.log("Alt: " + previewPic.alt);
+            console.log("Src: " + previewPic.src);
+
+            const display = document.getElementById("image");
+            display.style.backgroundImage = "url('" + previewPic.src + "')";
+            display.innerHTML = previewPic.alt;
+        }
+
+        
+        function undo() {
+            const display = document.getElementById("image");
+            display.style.backgroundImage = "url('')";
+            display.innerHTML = "Di chuột qua một poster để hiển thị tại đây.";
+        }
+    </script>
 </body>
 </html>
