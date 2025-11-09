@@ -18,6 +18,19 @@ section img:nth-child(odd) { border-radius: 30px; }
 .poster-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; justify-items: center; }
 footer { text-align: center; background-color: #f2f2f2; padding: 10px; margin-top: 20px; }
 #image { width: 30vw; height: 30vh; margin: 0 auto 20px auto; border: 2px dashed #aaa; border-radius: 10px; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; color: #333; font-weight: bold; font-size: 20px; text-shadow: 1px 1px 3px white; }
+@media (min-width: 600px) {
+    .poster-grid { grid-template-columns: repeat(2, 1fr); } 
+    section img { width: 180px; } 
+    #image { width: 60vw; height: 35vh; }
+}
+
+
+@media (min-width: 1024px) {
+    .poster-grid { grid-template-columns: repeat(3, 1fr); } 
+    section img { width: 200px; }
+    #image { width: 40vw; height: 40vh; }
+    nav { justify-content: flex-start; padding: 15px 30px; }
+}
 </style>
 </head>
 <body>
